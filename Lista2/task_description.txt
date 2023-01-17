@@ -1,0 +1,36 @@
+Transport Company
+
+DSW Transport Company is engaged in international freight forwarding. The company handles both sea freight shipping with container ships, railway transport and trucking. Transport is only done using containers. Prepare a program that can manage the described company.
+
+Class structure
+
+The program should consist of the following classes:
+• Transport (abstract class) common to all forms of transport, includes methods:
+– transport(from, to) - transports goods from place A to place B (displays the appropriate message of the transport being made, additionally when this method is called, a message about the form of transport should be displayed, e.g. transported by ship (this functionality should rather be implemented in child classes)
+– load(...) method allows loading of goods.
+• Goods - a class representing goods, includes necessary fields and methods
+• Container - a class representing a container, includes a field storing an object of the Goods class, includes methods for loading and unloading goods.
+• Ship, Train, Truck - classes inheriting from the Transport class, extending its methods and implementing methods specific to the given means of transport. Define the capacity of each transport: ship - 90 containers, train - 20 containers, truck - 1 container
+• Warehouse - class that stores containers that are waiting for further transport
+Additional classes may be implemented if necessary.
+
+System simulation
+
+In the class handling the simulation, propose structures that allow storing goods, containers and various means of transport. Perform a simulation consisting of the following steps:
+
+1.Add products: electronic parts, mobile phones, shoes, clothing
+2.Add 40 containers to the company's resources
+3.Add 1 ship, 2 trains, and 10 trucks to the company's resources. Use a map (HashMap) for this purpose, whose keys are the names of the means of transport, and the values are lists containing specific objects
+4.Define the company's warehouses: Gdańsk, Wrocław, Kraków, Poznań
+5.Load into containers:
+• 10 containers with electronic parts
+• 20 containers with phones
+• 5 containers each with shoes and clothing
+6.Load all containers on the ship sailing from New York to Gdańsk
+7.Unload the ship
+8.Load the containers on trains heading to Wrocław. As the trains arrive in Wrocław, unload them and display the warehouse status
+9.Transport all shoes and clothing to Poznań by truck (remember to unload to the warehouse)
+10.Transport all electronic items to Kraków by truck
+11.Tell how many total trips all the means of transport owned by the company have made (use a static field of the class for this purpose)
+
+Notice: At the beginning of the simulation, all transportation vehicles are located in the warehouse in Gdańsk. It is possible that a situation arises where it is necessary to travel "empty," that is, without loaded goods (remember about load limitations).
